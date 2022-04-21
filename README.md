@@ -1,0 +1,1 @@
+kosice-nextjs-app

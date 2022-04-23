@@ -1,19 +1,14 @@
+// Import identity
+@import "design-system/css-reset";
+@import "design-system/colors";
+@import "design-system/font";
+
 // Import pages
-@import "pages/index";
+@import "pages/login";
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+// Import interaction elements
+@import "./interaction/buttons";
+@import "./interaction/inputs";
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
+// Import custom widgets
+@import "custom.scss";

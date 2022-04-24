@@ -1,9 +1,9 @@
-export const BalanceSheet = ({ balance }: { balance: number }) => {
+export const BalanceSheet = ({ balance, text, deco, id }: { balance: number; text: string; deco?: boolean; id?: string }) => {
   return (
-    <div className="balance-sheet">
-      <span>Balance:</span>
+    <div className="balance-sheet" id={id}>
+      <span>{text}</span>
       <h2>{balance} €</h2>
-      <span className="balance-deco">
+      {/* <span className="balance-deco">
         <svg width="116" height="122" viewBox="0 0 116 122" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0_60_199)">
             <path
@@ -41,7 +41,7 @@ export const BalanceSheet = ({ balance }: { balance: number }) => {
             </clipPath>
           </defs>
         </svg>
-      </span>
+      </span> */}
     </div>
   );
 };

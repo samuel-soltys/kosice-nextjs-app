@@ -2,30 +2,12 @@ import { FooterMenu } from "../components/footer-menu";
 import { BalanceSheet } from "../components/balance-sheet";
 import { PopUp } from "../components/popup";
 import { TransactionList } from "../components/transactionlist";
+import { Button } from "../components/button";
+import React from "react";
 
 const Dashboard = () => {
   return (
     <div className="container dashboard">
-      {/* <div className="top-decoration">
-        <svg width="390" height="96" viewBox="0 0 390 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g clip-path="url(#clip0_77_27)">
-            <path
-              opacity="0.5"
-              d="M390.5 0.500254L0.499991 0.50019L0.499838 68.5003C0.499838 68.5003 53.9342 91.4535 94 86C179 74.4304 200.5 96 335 96C371.378 96 390.5 86 390.5 86L390.5 0.500254Z"
-              fill="#191645"
-            />
-            <path
-              d="M0.000273332 -18.2219L390 -18.2223L390 90.5C390 90.5 336.5 64.5002 256.5 64.5C176.5 64.4999 51.0364 48.6509 0.000216602 90.4999C-25 111 0.000273332 -18.2219 0.000273332 -18.2219Z"
-              fill="#191645"
-            />
-          </g>
-          <defs>
-            <clipPath id="clip0_77_27">
-              <rect width="390" height="96" fill="white" />
-            </clipPath>
-          </defs>
-        </svg>
-      </div> */}
       <nav id="main-navbar">
         <div className="position-relative">
           <div className="d-flex justify-content-between" id="main-navbar-container">
@@ -50,41 +32,61 @@ const Dashboard = () => {
           <div id="navbar-background-transparent" className="position-absolute"></div>
         </div>
       </nav>
-      <h1 className="headline">Kids Banking</h1>
-      <BalanceSheet balance={1167} />
-      <div className="link-action position-relative">
-        <button
-          onClick={() => {
-            document.getElementById("popup-transactions").style.display = "flex";
-          }}
-        >
-          Transactions
-        </button>
-        <button
+      <h1 className="headline">Welcome!</h1>
+      <BalanceSheet balance={1167} text="Balance:" id="main-sheet" deco={true} />
+      <div className="link-action justify-start position-relative">
+        <div className="ms-5">
+          <svg className="me-3" width="27" height="16" viewBox="0 0 27 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M1 7C0.447715 7 -6.70587e-08 7.44772 0 8C6.70587e-08 8.55228 0.447715 9 1 9L1 7ZM26.7071 8.7071C27.0976 8.31658 27.0976 7.68341 26.7071 7.29289L20.3431 0.92893C19.9526 0.538406 19.3195 0.538406 18.9289 0.92893C18.5384 1.31945 18.5384 1.95262 18.9289 2.34314L24.5858 8L18.9289 13.6569C18.5384 14.0474 18.5384 14.6805 18.9289 15.0711C19.3195 15.4616 19.9526 15.4616 20.3431 15.0711L26.7071 8.7071ZM1 9L26 9L26 7L1 7L1 9Z"
+              fill="#191645"
+            />
+          </svg>
+          <a
+            onClick={() => {
+              document.getElementById("popup-transactions").style.display = "flex";
+            }}
+          >
+            Transactions
+          </a>
+        </div>
+        <div className="ms-5 my-3">
+          <svg className="me-3" width="27" height="16" viewBox="0 0 27 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M1 7C0.447715 7 -6.70587e-08 7.44772 0 8C6.70587e-08 8.55228 0.447715 9 1 9L1 7ZM26.7071 8.7071C27.0976 8.31658 27.0976 7.68341 26.7071 7.29289L20.3431 0.92893C19.9526 0.538406 19.3195 0.538406 18.9289 0.92893C18.5384 1.31945 18.5384 1.95262 18.9289 2.34314L24.5858 8L18.9289 13.6569C18.5384 14.0474 18.5384 14.6805 18.9289 15.0711C19.3195 15.4616 19.9526 15.4616 20.3431 15.0711L26.7071 8.7071ZM1 9L26 9L26 7L1 7L1 9Z"
+              fill="#191645"
+            />
+          </svg>
+          <a
+            onClick={() => {
+              document.getElementById("popup-monthly-view").style.display = "flex";
+            }}
+          >
+            Monthly View
+          </a>
+        </div>
+
+        {/* <button
           onClick={() => {
             document.getElementById("popup-monthly-view").style.display = "flex";
           }}
         >
           Monthly view
+        </button> */}
+      </div>
+      <BalanceSheet balance={345} text="Savings:" id="savings-sheet" />
+      <div className="align-right">
+        <button
+          id="see-savings-button"
+          onClick={() => {
+            document.getElementById("popup-monthly-view").style.display = "flex";
+          }}
+        >
+          See Savings
         </button>
-        <svg id="space-filler-3" width="63" height="542" viewBox="0 0 63 542" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g clip-path="url(#clip0_97_43)">
-            <path
-              d="M-34.3183 308.309L-33.47 -50.9997C12.4222 5.61529 25.5325 62.8193 53.0061 129.977C80.4798 197.135 29.5268 199.069 24.9947 268.399C20.4626 337.73 -8.52987 470.292 -8.52987 470.292L-34.3183 308.309Z"
-              fill="#00E0A1"
-            />
-            <path
-              opacity="0.4"
-              d="M-15.0007 298.115L1.02952 104.945C14.3046 148.281 20.3963 198.793 54.9493 262.693C89.5024 326.592 -7.22838 437.915 31.6327 481.367C70.4938 524.818 -15.0008 546.544 -15.0008 546.544L-15.0007 298.115Z"
-              fill="#00E0A1"
-            />
-          </g>
-          <defs>
-            <clipPath id="clip0_97_43">
-              <rect width="63" height="542" fill="white" />
-            </clipPath>
-          </defs>
-        </svg>
+      </div>
+      <div className="icon-savings">
+        <img src="/savings.svg" />
       </div>
       <FooterMenu />
       <PopUp
@@ -93,10 +95,22 @@ const Dashboard = () => {
         content={
           <div className="popup-content">
             <TransactionList />
+            <div className="d-flex justify-content-center mt-3 px-3">
+              <img src={"/online-transactions.svg"} />
+            </div>
           </div>
         }
       />
-      <PopUp id="popup-monthly-view" heading="Monthly view" content={<div className="popup-content">insert graph</div>} />
+      <PopUp
+        id="popup-monthly-view"
+        heading="Monthly view"
+        content={
+          <div className="d-flex justify-content-center mt-3 px-3">
+            <img src={"/spenidngs-graph.svg"} />
+          </div>
+        }
+      />
+      <img id="space-filler-3" src="/space-filler-3.svg" />
     </div>
   );
 };

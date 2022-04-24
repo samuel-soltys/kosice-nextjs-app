@@ -1,5 +1,6 @@
 .education {
   padding: 0 6px;
+  padding-top: 80px;
   .headline {
     font-size: 40px;
   }
@@ -19,16 +20,18 @@
     background-color: map-get($primitives, gray);
   }
   .accent {
-    background-color: map-get($primitives, accentBG);
+    background-color: map-get($primitives, accent);
+    // color: white;
   }
   .darkblue {
-    background-color: map-get($primitives, secondaryBG);
+    background-color: map-get($primitives, secondary);
+    color: white;
   }
   .gray,
   .accent,
   .darkblue {
     margin: 10px 0;
-    padding: 10px;
+    padding: 10px 12px;
     border-radius: 12px;
     margin: 6px;
   }
@@ -39,5 +42,19 @@
 
   .mb-12 {
     margin-bottom: 12px;
+  }
+  .mb-80 {
+    margin-bottom: 80px;
+  }
+
+  #space-filler-5-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 197px;
+    background-image: url("../../public/space-filler-5.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 }

@@ -52,3 +52,6 @@ a {
   color: map-get($primitives, accent);
   font-weight: 600;
 }
+.headline-secondary {
+  color: map-get($primitives, secondary);
+}

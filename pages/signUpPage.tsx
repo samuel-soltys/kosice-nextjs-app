@@ -4,20 +4,22 @@ import { Button } from "../components/button";
 import Router from "next/router";
 
 function submitOutputInput(users: any) {
-  const usersArr = JSON.parse(users.users);
-  //   console.log(usersArr);
-  usersArr.map((user: any) => {
-    const input_email = document.getElementById("input-login-email").value;
-    const input_username = document.getElementById("input-login-username").value;
-    const input_password = document.getElementById("input-login-password").value;
-    if (input_email && input_password && input_username) {
-      console.log("Sme tu!");
-    }
-  });
+  console.log("bu");
+  console.log(users);
+  // console.log(getStaticProps());
+  // const usersArr = JSON.parse(users.users);
+  // //   console.log(usersArr);
+  // usersArr.map((user: any) => {
+  //   const input_email = document.getElementById("input-login-email").value;
+  //   const input_username = document.getElementById("input-login-username").value;
+  //   const input_password = document.getElementById("input-login-password").value;
+  //   if (input_email && input_password && input_username) {
+  //     console.log("Sme tu!");
+  //   }
+  // });
 }
 
-const SignUp = ({ props }: { props: any }) => {
-  const users = props;
+const SignUp = (props: any) => {
   return (
     <div className="container mt-5" id="login-container">
       <svg id="space-filler-1" width="290" height="213" viewBox="0 0 290 213" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -71,7 +73,7 @@ const SignUp = ({ props }: { props: any }) => {
           color="primary"
           chevron={true}
           onClick={() => {
-            submitOutputInput(users);
+            submitOutputInput(props);
           }}
         />
       </div>

@@ -20,8 +20,6 @@ export async function getStaticProps() {
 }
 const Home: NextPage = (props) => {
   // check if logged in
-  // let users = props;
-  // console.log(props);
   return <LogIn props={props} />;
 };
 

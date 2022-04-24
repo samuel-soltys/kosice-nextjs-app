@@ -15,6 +15,7 @@
 }
 
 #main-navbar {
+  z-index: 2;
   width: 100%;
   height: 96px;
   position: fixed;
@@ -40,49 +41,97 @@
     color: white;
   }
 }
-
+#popup-monthly-view img {
+  width: 100%;
+}
 #space-filler-3 {
   position: absolute;
-  left: -30px;
-  top: -10px;
+  left: 0px;
+  bottom: 0px;
+}
+#space-filler-4 {
+  position: absolute;
+  right: -30px;
+  bottom: 0;
 }
 
-.footer-menu-wrap {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-.footer-menu {
-  display: flex;
-  justify-content: space-between;
-  width: 80%;
-  position: fixed;
-  bottom: 20px;
-  background-color: map-get($primitives, secondary);
-  border-radius: 12px;
-  margin: auto;
-  padding: 10px 25px;
-}
 .balance-sheet {
   position: relative;
   background-color: #f0f0f0;
   border-radius: 12px;
-  padding: 20px;
-  margin-top: 40px;
+  padding: 15px 22px;
+  margin-top: 20px;
   .balance-deco {
     position: absolute;
     top: -50px;
     right: -20px;
   }
 }
+#main-sheet {
+  h2 {
+    font-size: 45px;
+    font-weight: 700;
+    color: map-get($primitives, secondary);
+  }
+}
+#savings-sheet {
+  margin-left: 40px;
+}
 
+#see-savings-button {
+  background-color: map-get($primitives, secondary);
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  padding: 10px 22px;
+}
+
+.align-right {
+  display: flex;
+  justify-content: flex-end;
+  button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    display: block;
+  }
+}
 .link-action {
   display: flex;
   justify-content: space-between;
   text-align: center;
   margin-top: 20px;
+  flex-direction: column;
+  align-items: start;
   button {
     padding: 10px 15px;
     display: block;
+  }
+  a {
+    text-decoration: underline !important;
+  }
+}
+
+.icon-savings {
+  position: relative;
+  display: block;
+  img {
+    display: block;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+  }
+}
+.text-wrap {
+  display: block;
+  h2 {
+    font-weight: 700;
+  }
+  &.achievements {
+    margin-top: 300px;
+    margin-left: 50px;
+  }
+  &.challenges {
+    margin-top: 100px;
+    padding-bottom: 150px;
   }
 }

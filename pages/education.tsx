@@ -3,7 +3,8 @@ import { FooterMenu } from "../components/footer-menu";
 const Education = () => {
   return (
     <div className="container education">
-      <h1 className="headline">Educate yourself</h1>
+      <div id="space-filler-5-wrapper"></div>
+      <h1 className="headline headline-secondary">Educate yourself</h1>
       <div className="row wrapper">
         <div className="col-12">
           <div className="accent">
@@ -39,7 +40,7 @@ const Education = () => {
             <img src="/video-game.svg" />
           </div>
         </div>
-        <div className="col-12">
+        <div className="col-12 mb-80">
           <div className="darkblue">
             <h4>Dont fall for the moment</h4>
             <p>

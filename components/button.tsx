@@ -1,14 +1,17 @@
+import { MouseEventHandler } from "react";
 export const Button = ({
   color,
   value,
   chevron,
+  onClick,
 }: {
   color: string;
   value: string;
   chevron?: boolean;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 }) => {
   return (
-    <button className={`button ${color}`}>
+    <button className={`button ${color}`} onClick={onClick}>
       {value}
       {chevron && (
         <div className="ms-3 d-flex">

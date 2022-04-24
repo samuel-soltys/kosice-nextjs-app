@@ -1,0 +1,43 @@
+.education {
+  padding: 0 6px;
+  .headline {
+    font-size: 40px;
+  }
+  .wrapper {
+    width: 100%;
+    margin: 0;
+  }
+
+  .video-game-container {
+    margin: auto 6px;
+    img {
+      width: 100%;
+    }
+  }
+
+  .gray {
+    background-color: map-get($primitives, gray);
+  }
+  .accent {
+    background-color: map-get($primitives, accentBG);
+  }
+  .darkblue {
+    background-color: map-get($primitives, secondaryBG);
+  }
+  .gray,
+  .accent,
+  .darkblue {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 12px;
+    margin: 6px;
+  }
+  .col-6,
+  .col-12 {
+    padding: 0;
+  }
+
+  .mb-12 {
+    margin-bottom: 12px;
+  }
+}

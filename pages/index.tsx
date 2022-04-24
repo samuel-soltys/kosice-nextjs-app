@@ -2,11 +2,27 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 
-import { LogIn } from "./logInPage";
+import LogIn from "./logInPage";
 
-const Home: NextPage = () => {
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
+
+export async function getStaticProps() {
+  const users = await prisma.user.findMany();
+  console.log(users);
+
+  const allUsers = JSON.stringify(users);
+
+  return {
+    props: { users: allUsers },
+  };
+}
+const Home: NextPage = (props) => {
   // check if logged in
-  return <LogIn />;
+  // let users = props;
+  // console.log(props);
+  return <LogIn props={props} />;
 };
 
 export default Home;

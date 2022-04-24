@@ -1,18 +1,46 @@
 #login-container {
-  margin-top: 90px !important;
+  padding: 90px 30px 0 30px !important;
+  margin-top: 0 !important;
+  height: 100%;
+  position: relative;
 
   #space-filler-1 {
     position: absolute;
     top: 0;
     right: 0;
+    pointer-events: none;
   }
   #space-filler-2 {
     position: absolute;
     bottom: 0;
     left: 0;
+    pointer-events: none;
   }
 }
 
 .heading-container {
   margin-bottom: 40px;
+}
+
+.line-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  hr {
+    display: block;
+    width: 120px;
+    height: 1px;
+    color: map-get($primitives, secondary);
+    background-color: map-get($primitives, secondary);
+    opacity: 1;
+    margin: 0 10px;
+  }
+}
+
+.redirect-login-text {
+  text-align: center;
+  p {
+    margin-bottom: 0;
+  }
 }

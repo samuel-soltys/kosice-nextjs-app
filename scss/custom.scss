@@ -1,7 +1,95 @@
 .container {
-  padding: 0 30px !important;
+  height: 100%;
+  position: relative;
 }
 .align-end-container {
   display: flex;
   justify-content: flex-end;
+}
+
+.z-index-2 {
+  z-index: 2;
+}
+
+.popup-wrap {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  .shadow {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .popup {
+    position: relative;
+    width: 90%;
+    background-color: map-get($primitives, primary);
+    border-radius: 12px;
+    height: 50%;
+    overflow: hidden;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.35);
+  }
+  .deco {
+    position: absolute;
+    // top: 0;
+    // right: 0;
+  }
+  .mark-x {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  h2 {
+    margin-top: 80px;
+    margin-left: 20px;
+    font-weight: bold;
+  }
+  .popup-content {
+    padding: 0px 20px;
+  }
+}
+// transactions
+.transaction-list-wrap {
+  margin-top: 20px;
+  .headlines-wrap {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 0;
+  }
+  .transactions {
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+    padding: 10px 16px;
+    margin: 7px 0 0 0;
+    background-color: map-get($primitives, gray);
+  }
+  .col-3,
+  .col-4,
+  .col-5 {
+    padding: 0;
+    margin-bottom: 3px;
+  }
+
+  .income,
+  .outcome {
+    font-weight: 500;
+  }
+  .income {
+    color: map-get($primitives, accent);
+  }
+  .outcome {
+    color: map-get($primitives, secondary);
+  }
 }

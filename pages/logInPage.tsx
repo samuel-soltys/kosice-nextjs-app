@@ -1,17 +1,27 @@
-import { InputField } from "../components/inputField";
+import { InputField } from "../components/InputField";
 import { Button } from "../components/button";
 
-export const LogIn = () => {
+import Router from "next/router";
+
+function submitLoginInput(users: any) {
+  const usersArr = JSON.parse(users.users);
+  usersArr.map((user: any) => {
+    const input_email = document.getElementById("input-login-email").value;
+    const input_password = document.getElementById("input-login-password").value;
+    if ((user.email == input_email || user.username == input_email) && user.password == input_password) {
+      Router.push("./dashboard");
+    } else {
+      document.getElementById("login-error-message").classList.remove("d-none");
+      document.getElementById("login-error-message").classList.add("d-block");
+    }
+  });
+}
+
+const LogIn = ({ props }: { props: any }) => {
+  const users = props;
   return (
-    <div className="container mt-5" id="login-container">
-      <svg
-        id="space-filler-1"
-        width="290"
-        height="213"
-        viewBox="0 0 290 213"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+    <div className="container" id="login-container">
+      <svg id="space-filler-1" width="290" height="213" viewBox="0 0 290 213" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_33_12)">
           <path
             d="M0.5 0L299.5 5.04632e-06L299.5 46L299.5 87L299.5 113.5L299.5 245.5C299.5 245.5 275 145.5 238 98.5C201 51.5 170.486 72.7928 133.5 46C70 -2.83439e-07 0.5 0 0.5 0Z"
@@ -29,14 +39,40 @@ export const LogIn = () => {
           </clipPath>
         </defs>
       </svg>
-      <svg
-        id="space-filler-2"
-        width="226"
-        height="208"
-        viewBox="0 0 226 208"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+
+      <div className="heading-container">
+        <h1>Welcome to</h1>
+        <h1 className="headline">Kids Banking</h1>
+      </div>
+      <h4>Log in</h4>
+      <InputField identifier="input-login-email" type="text" textValue="Username or email:" />
+      <InputField identifier="input-login-password" type="password" textValue="Password:" />
+      <p className="error-message d-none" id="login-error-message">
+        You have entered an invalid password or email.
+      </p>
+      <div className="align-end-container">
+        <Button
+          value="Log In"
+          color="primary"
+          chevron={true}
+          onClick={() => {
+            // console.log(users);
+            submitLoginInput(users);
+          }}
+        />
+      </div>
+      <div className="line-divider">
+        <hr className="line"></hr>
+        <span>OR</span>
+        <hr className="line"></hr>
+      </div>
+      <div className="redirect-login-text">
+        <p>Don't have an account?</p>
+        <a href="#" onClick={() => Router.push("./signUpPage")}>
+          Sign up now!
+        </a>
+      </div>
+      <svg id="space-filler-2" width="226" height="208" viewBox="0 0 226 208" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_33_16)">
           <path
             d="M-48.5889 144.428L-1.50055 -1.50002C42.9995 56 44.4995 65 69.4998 134.5C94.5 204 162.5 144.428 154.411 217.753C146.323 291.079 33.4998 288 33.4998 288L-48.5889 144.428Z"
@@ -54,17 +90,8 @@ export const LogIn = () => {
           </clipPath>
         </defs>
       </svg>
-
-      <div className="heading-container">
-        <h1>Welcome to</h1>
-        <h1>Kids Banking</h1>
-      </div>
-      <h4>Log in</h4>
-      <InputField type="text" textValue="Username or email:" />
-      <InputField type="password" textValue="Password:" />
-      <div className="align-end-container">
-        <Button value="Log In" color="primary" chevron={true} />
-      </div>
     </div>
   );
 };
+
+export default LogIn;

@@ -10,9 +10,8 @@ function submitOutputInput(users: any) {
     const input_email = document.getElementById("input-login-email").value;
     const input_username = document.getElementById("input-login-username").value;
     const input_password = document.getElementById("input-login-password").value;
-    if (user.email == input_email && user.password == input_password) {
+    if (input_email && input_password && input_username) {
       console.log("Sme tu!");
-      Router.push("./dashboard");
     }
   });
 }
@@ -60,12 +59,12 @@ const SignUp = ({ props }: { props: any }) => {
 
       <div className="heading-container">
         <h1>Welcome to</h1>
-        <h1>Kids Banking</h1>
+        <h1 className="headline">Kids Banking</h1>
       </div>
       <h4>Sign Up</h4>
-      <InputField identifier="input-login-email" type="text" textValue="Email:" />
-      <InputField identifier="input-login-username" type="text" textValue="Username:" />
-      <InputField identifier="input-login-password" type="password" textValue="Password:" />
+      <InputField identifier="input-signup-email" type="text" textValue="Email:" />
+      <InputField identifier="input-signup-username" type="text" textValue="Username:" />
+      <InputField identifier="input-signup-password" type="password" textValue="Password:" />
       <div className="align-end-container">
         <Button
           value="Sign Up"
@@ -81,10 +80,10 @@ const SignUp = ({ props }: { props: any }) => {
         <span>OR</span>
         <hr className="line"></hr>
       </div>
-      <div className="sign-up-text">
+      <div className="redirect-login-text">
         <p>Already have an account?</p>
-        <a href="https://google.com">
-          <p>Log in here</p>
+        <a href="#" onClick={() => Router.push("/")}>
+          Log In here
         </a>
       </div>
     </div>

@@ -33,3 +33,22 @@ p {
   font-size: 16px;
   font-weight: 300;
 }
+
+a {
+  text-decoration-color: map-get($primitives, accent);
+  color: map-get($primitives, secondary);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 2px;
+}
+
+.error-message {
+  color: red;
+  margin: 0 3px 10px 3px;
+  position: relative;
+  top: -10px;
+}
+
+.headline {
+  color: map-get($primitives, accent);
+  font-weight: 600;
+}
